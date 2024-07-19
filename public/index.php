@@ -16,7 +16,7 @@
         <div class="card">
             <img class="card-img-top" src="../assets/images/list.png" alt="Imagem de capa do card">
             <div class="card-body">
-                <a href=""><h5 class="card-title">Listagens Estoque</h5></a>
+                <a href="../src/views/products/list.php"><h5 class="card-title">Listagens Estoque</h5></a>
                 <!-- <p class="card-text">Este é um card mais longo com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior.</p> -->
                 <!-- <p class="card-text"><small class="text-muted">Atualizados 3 minutos atrás</small></p> -->
             </div>

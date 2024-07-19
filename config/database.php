@@ -3,7 +3,8 @@
 class Banco{
     private static $dbNome = 'Con-Estoque';
     private static $dbHost = 'localhost';
-    private static $dbUsuario = 'root';
+    private static $dbPort = '3307'; // Defina a porta personalizada aqui
+    private static $dbUsuario = 'user.estoque';
     private static $dbSenha = 'root';
 
     private static $cont = null;
@@ -15,7 +16,8 @@ class Banco{
     public static function conectar(){
         if (null == self::$cont) {
             try {
-                self::$cont == new PDO("mysql:host=".self::$dbHost.";"."dbname=".self::$dbNome, self::$dbUsuario, self::$dbSenha);
+                $dsn = "mysql:host=" . self::$dbHost . ";port=" . self::$dbPort . ";dbname=" . self::$dbNome;
+                self::$cont = new PDO($dsn, self::$dbUsuario, self::$dbSenha);
             } catch (PDOException $exception) {
                 die($exception->getMessage());
             }

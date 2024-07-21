@@ -34,7 +34,7 @@ O projeto **Controle de Estoque** é uma aplicação desenvolvida para gerenciar
 
 ### Pré-requisitos
 
-- [Requisitos de Software] (ex.: Python 3.8+, Java 11, etc.)
+- php 8.3.8, MySQL 8.0.38
 - [Dependências] (ex.: Frameworks, Bibliotecas, etc.)
 
 ### Passos para Instalação
@@ -45,7 +45,7 @@ O projeto **Controle de Estoque** é uma aplicação desenvolvida para gerenciar
     git clone https://github.com/marcos-rts/Controle-de-estoque.git
     cd Controle-de-estoque
     ```
-2. Instale as dependências:
+<!-- 2. Instale as dependências:
 
     ```bash
     [Comando para instalação de dependências] (ex.: pip install -r requirements.txt, mvn install, etc.)
@@ -55,22 +55,22 @@ O projeto **Controle de Estoque** é uma aplicação desenvolvida para gerenciar
     
     ```bash
     [Comandos para configuração do banco de dados]
-    ```
+    ``` -->
 
-4. Inicie a aplicação:
+2. Inicie a aplicação:
 
     ```bash
     php -S localhost:8000
     ```
 
-
+<!-- 
 ## Contribuindo
 
 Contribuições são sempre bem-vindas!
 
 Veja `contribuindo.md` para saber como começar.
 
-Por favor, siga o `código de conduta` desse projeto.
+Por favor, siga o `código de conduta` desse projeto. -->
 
 
 ## Licença

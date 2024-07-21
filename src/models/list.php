@@ -10,7 +10,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/config/database.php';
 
 ?>
 
-<table class="table">
+<table class="table table-striped tale-sm">
     <!-- Cabeçalho -->
     <thead>
         <tr>

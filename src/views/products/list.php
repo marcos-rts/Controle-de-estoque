@@ -1,4 +1,4 @@
-<?php include '../templates/header.php' ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/src/views/templates/header.php'; ?>
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="../../../public/index.php">Home</a></li>
@@ -7,6 +7,8 @@
 </nav>
 
 <main>
-    <?php include '../movements/list.php' ?>
+  <div class="container">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/src/models/list.php' ?>
+  </div>
 </main>
-<?php include '../templates/footer.php' ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/src/views/templates/footer.php' ?>

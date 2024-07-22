@@ -34,28 +34,20 @@ if (count($errors) > 0) {
         echo $error . "<br>";
     }
 } else {
-    $pdo = Banco::conectar();
+    try {
+        $pdo = Banco::conectar();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "INSERT INTO TB_PRODUTOS 
+    (NomeProduto, Quantidade, DisponivelParaSaida, TB_CATEGORIA_Id, TB_LOCALIZACAO_Id)
+    VALUES(?,?,?,?,?)";
+        $q = $pdo->prepare($sql);
+        $q->execute(array($nomeProduto, $quantidade, $disponivel, $categoriaID, $localizacaoID));
+        Banco::desconectar();
 
-    // Preparando a declaração SQL para inserir os dados na tabela TB_PRODUTOS
-    $sql = "INSERT INTO TB_PRODUTOS (NomeProduto, Quantidade, DisponivelParaSaida, TB_CATEGORIA_Id, TB_LOCALIZACAO_Id) 
-            VALUES (:NomeProduto, :Localizacao, :Disponivel, :CategoriaID, :LocalizacaoID)";
+        //Redireciona para a pagina do formulario com um parametro de sucesso
+        header("Location: ../views/products/create.php?status=success");
 
-    // Preparando a declaração SQL para execução
-    $stmt = $pdo->prepare($sql);
-
-    // Ligando os parâmetros
-    $stmt->bindParam(':NomeProduto', $nomeProduto);
-    $stmt->bindParam(':Quantidade', $quantidade);
-    $stmt->bindParam(':Disponivel', $disponivel);
-    $stmt->bindParam(':CategoriaID', $categoriaID);
-    $stmt->bindParam(':LocalizacaoID', $localizacaoID);
-
-    // Executando a inserção
-    if ($stmt->execute()) {
-        echo "Produto inserido com sucesso!";
-    } else {
-        echo "Erro ao inserir o produto.";
-    };
-
-    Banco::desconectar();
+    } catch (PDOException $e) {
+        echo "Erro: " . $e->getMessage();
+    }
 }

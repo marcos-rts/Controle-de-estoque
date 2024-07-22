@@ -8,9 +8,12 @@
 </nav>
 
 <main>
-    <div class="container">
-    <?php include $_SERVER['DOCUMENT_ROOT'] . '/src/models/create.php' ?>
-    </div>
+  <div class="container">
+    <form action="./../../controllers/CreateController.php" method="post">
+      <?php include $_SERVER['DOCUMENT_ROOT'] . '/src/models/create.php' ?>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
 
 </main>
 

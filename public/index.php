@@ -12,5 +12,4 @@
         <a role="button" class="btn btn-primary btn-lg btn-block" href="../src/views/products/list.php">Lista de Estoque</a>
     </div>
 </main>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/src/views/templates/footer.php'; 
-?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/src/views/templates/footer.php'; ?>
